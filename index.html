@@ -47,7 +47,10 @@ header{
 
 .subtitle{color:#886b87;margin-top:5px}
 
-main{width:min(100% - 24px,1000px);margin:0 auto 40px}
+main{
+ width:min(100% - 24px,1000px);
+ margin:0 auto 40px;
+}
 
 .page{display:none;animation:appear .3s ease}
 .page.active{display:block}
@@ -89,8 +92,8 @@ main{width:min(100% - 24px,1000px);margin:0 auto 40px}
 .school-logo{
  display:block;
  width:min(190px,65%);
- height:auto;
  max-height:190px;
+ height:auto;
  object-fit:contain;
  margin:0 auto 14px;
  filter:drop-shadow(0 5px 9px #9d5b7920);
@@ -195,7 +198,9 @@ main{width:min(100% - 24px,1000px);margin:0 auto 40px}
 .staff-card small{color:#725e70}
 
 .green-page{
- background:radial-gradient(ellipse at top left,#f4ffeb,transparent 50%),linear-gradient(135deg,#e5f5df,#cce8c8);
+ background:
+ radial-gradient(ellipse at top left,#f4ffeb,transparent 50%),
+ linear-gradient(135deg,#e5f5df,#cce8c8);
  border:3px double #77a879;
  border-radius:28px;
  padding:20px;
@@ -217,8 +222,20 @@ main{width:min(100% - 24px,1000px);margin:0 auto 40px}
  box-shadow:0 4px 10px #315c3210;
 }
 
-.time{direction:ltr;font-weight:900;color:#39764a;white-space:nowrap}
-.vine{text-align:center;color:#508957;letter-spacing:5px;font-size:22px;margin:8px 0}
+.time{
+ direction:ltr;
+ font-weight:900;
+ color:#39764a;
+ white-space:nowrap;
+}
+
+.vine{
+ text-align:center;
+ color:#508957;
+ letter-spacing:5px;
+ font-size:22px;
+ margin:8px 0;
+}
 
 .newspaper{
  background:#fffdf4;
@@ -255,7 +272,11 @@ main{width:min(100% - 24px,1000px);margin:0 auto 40px}
 
 .news-card h3{margin-top:0;color:#9b6544}
 
-form label{display:block;margin:10px 0 5px;font-weight:700}
+form label{
+ display:block;
+ margin:10px 0 5px;
+ font-weight:700;
+}
 
 input,textarea{
  width:100%;
@@ -267,16 +288,31 @@ input,textarea{
 
 textarea{min-height:100px;resize:vertical}
 .note{font-size:13px;color:#776675;line-height:1.9}
-footer{text-align:center;color:#98758e;padding:18px 10px 30px}
+
+footer{
+ text-align:center;
+ color:#98758e;
+ padding:22px 10px 30px;
+ line-height:2;
+}
+
+.designers{
+ margin-top:8px;
+ font-size:13px;
+ color:#a44479;
+}
 
 @media(min-width:650px){
- .dashboard,.class-grid,.staff-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+ .dashboard,.class-grid,.staff-grid{
+  grid-template-columns:repeat(4,minmax(0,1fr));
+ }
  .class-tile{min-height:150px}
 }
 
 @media(max-width:360px){
  .time-card{align-items:flex-start;flex-direction:column}
  .school-logo{width:150px}
+ .panel{padding:14px}
 }
 </style>
 </head>
@@ -290,30 +326,22 @@ footer{text-align:center;color:#98758e;padding:18px 10px 30px}
 
 <main>
 
+<!-- صفحه ورود -->
 <section id="home" class="page active">
  <div class="hero">
 
-  <!-- لوگوی مدرسه -->
   <img
-   src="logo-1.png"
+   src="./InShot_20261013_015253183.png"
    alt="لوگوی دبیرستان یادگاری"
    class="school-logo"
   >
 
-  <h2>به مدرسه یادگاری خوش آمدید</h2>
+  <h2>به مدرسهٔ یادگاری خوش آمدید</h2>
 
   <p>
    اینجا جایی برای خاطره‌های قشنگ، موفقیت‌های درخشان
    و تلاش دخترهای پرتلاش مدرسه است. 💞
   </p>
-  <footer>
-  ❀ دبیرستان یادگاری؛ جایی برای شکوفایی رویاها ❀
-  <div style="margin-top:12px;line-height:2;font-size:13px">
-    🌸 طراحی و ساخت سایت 🌸
-    <br>
-    ستایش اربابی • نازنین جهاندیده • نیایش نوروزی
-  </div>
-  </footer>
 
   <button class="primary-btn" onclick="showPage('dashboard')">
    ورود به مدرسه ✨
@@ -323,6 +351,7 @@ footer{text-align:center;color:#98758e;padding:18px 10px 30px}
  </div>
 </section>
 
+<!-- منوی اصلی -->
 <section id="dashboard" class="page">
  <button class="back-btn" onclick="showPage('home')">← صفحهٔ آغازین</button>
 
@@ -330,6 +359,7 @@ footer{text-align:center;color:#98758e;padding:18px 10px 30px}
   <h2 class="section-title">🌸 دنیای دبیرستان یادگاری 🌸</h2>
 
   <div class="dashboard">
+
    <button class="tile" onclick="showPage('classes')">
     <span class="emoji">🏫</span>
     <strong>کلاس‌ها</strong>
@@ -344,7 +374,7 @@ footer{text-align:center;color:#98758e;padding:18px 10px 30px}
 
    <button class="tile" onclick="showPage('timing')">
     <span class="emoji">🕰️</span>
-    <strong>زمان‌بندی کلاس</strong>
+    <strong>زمان‌بندی مدرسه</strong>
     <small>ساعت زنگ‌های مدرسه</small>
    </button>
 
@@ -353,18 +383,22 @@ footer{text-align:center;color:#98758e;padding:18px 10px 30px}
     <strong>روزنامهٔ دیواری مدرسه</strong>
     <small>تولدها، افتخارها و نظرات 💙</small>
    </button>
+
   </div>
  </div>
 </section>
 
+<!-- فهرست کلاس‌ها -->
 <section id="classes" class="page">
  <button class="back-btn" onclick="showPage('dashboard')">← بازگشت</button>
+
  <div class="panel">
   <h2 class="section-title">🏫 کلاس‌های دبیرستان</h2>
   <div class="class-grid" id="classGrid"></div>
  </div>
 </section>
 
+<!-- فضای داخلی کلاس -->
 <section id="classroom" class="page">
  <button class="back-btn" onclick="showPage('classes')">← بازگشت به کلاس‌ها</button>
 
@@ -372,64 +406,113 @@ footer{text-align:center;color:#98758e;padding:18px 10px 30px}
   <h2 id="roomTitle" class="section-title">کلاس</h2>
 
   <div class="dashboard room-menu">
+
    <button class="tile" onclick="openRoomSection('students')">
-    <span class="emoji">👩🏻‍🎓</span><strong>دانش‌آموزان</strong>
+    <span class="emoji">👩🏻‍🎓</span>
+    <strong>دانش‌آموزان</strong>
    </button>
 
    <button class="tile" onclick="openRoomSection('teachers')">
-    <span class="emoji">👩🏻‍🏫</span><strong>دبیران</strong>
+    <span class="emoji">👩🏻‍🏫</span>
+    <strong>دبیران</strong>
    </button>
 
    <button class="tile" onclick="openRoomSection('lessons')">
-    <span class="emoji">📚</span><strong>درس‌ها</strong>
+    <span class="emoji">📚</span>
+    <strong>درس‌ها</strong>
    </button>
 
    <button class="tile" onclick="openRoomSection('schedule')">
-    <span class="emoji">🗓️</span><strong>برنامهٔ کلاسی</strong>
+    <span class="emoji">🗓️</span>
+    <strong>برنامهٔ کلاسی</strong>
    </button>
+
   </div>
 
-  <div id="roomContent"></div>
+  <div id="roomContent">
+   <p class="note">یکی از چهار بخش بالا را انتخاب کن. 🌸</p>
+  </div>
  </div>
 </section>
 
+<!-- دبیران و مدیران -->
 <section id="staff" class="page">
  <button class="back-btn" onclick="showPage('dashboard')">← بازگشت</button>
 
  <div class="panel">
   <h2 class="section-title">💐 دبیران و مدیران دبیرستان یادگاری 💐</h2>
+
   <p style="text-align:center;line-height:2">
    با سپاس از تمام کسانی که برای پیشرفت ما تلاش می‌کنند. 💗
   </p>
+
   <div class="staff-grid" id="staffGrid"></div>
  </div>
 </section>
 
+<!-- زمان‌بندی مدرسه -->
 <section id="timing" class="page">
  <button class="back-btn" onclick="showPage('dashboard')">← بازگشت</button>
 
  <div class="green-page">
   <div class="vine">🌿 ❧ 🌱 ❧ 🌿</div>
-  <h2 class="section-title">🕰️ زمان‌بندی دبیرستان 🕰️</h2>
-  <p style="text-align:center;color:#39764a">نظم امروز، موفقیت فردا 🌱</p>
 
-  <div class="time-card"><strong>🌞 ساعت صبحگاه</strong><span class="time">7:30 – 7:45</span></div>
-  <div class="time-card"><strong>📚 کلاس اول</strong><span class="time">7:45 – 9:05</span></div>
-  <div class="time-card"><strong>🍃 استراحت اول</strong><span class="time">15 دقیقه</span></div>
-  <div class="time-card"><strong>📖 کلاس دوم</strong><span class="time">9:20 – 10:35</span></div>
-  <div class="time-card"><strong>🌷 استراحت دوم</strong><span class="time">15 دقیقه</span></div>
-  <div class="time-card"><strong>📝 کلاس سوم</strong><span class="time">10:45 – 12:00</span></div>
-  <div class="time-card"><strong>🌿 استراحت سوم</strong><span class="time">15 دقیقه</span></div>
-  <div class="time-card"><strong>🎓 کلاس چهارم</strong><span class="time">12:15 – 13:30</span></div>
+  <h2 class="section-title">🕰️ زمان‌بندی دبیرستان 🕰️</h2>
+
+  <p style="text-align:center;color:#39764a">
+   نظم امروز، موفقیت فردا 🌱
+  </p>
+
+  <div class="time-card">
+   <strong>🌞 ساعت صبحگاه</strong>
+   <span class="time">7:30 – 7:45</span>
+  </div>
+
+  <div class="time-card">
+   <strong>📚 کلاس اول</strong>
+   <span class="time">7:45 – 9:05</span>
+  </div>
+
+  <div class="time-card">
+   <strong>🍃 استراحت اول</strong>
+   <span>15 دقیقه</span>
+  </div>
+
+  <div class="time-card">
+   <strong>📖 کلاس دوم</strong>
+   <span class="time">9:20 – 10:35</span>
+  </div>
+
+  <div class="time-card">
+   <strong>🌷 استراحت دوم</strong>
+   <span>15 دقیقه</span>
+  </div>
+
+  <div class="time-card">
+   <strong>📝 کلاس سوم</strong>
+   <span class="time">10:45 – 12:00</span>
+  </div>
+
+  <div class="time-card">
+   <strong>🌿 استراحت سوم</strong>
+   <span>15 دقیقه</span>
+  </div>
+
+  <div class="time-card">
+   <strong>🎓 کلاس چهارم</strong>
+   <span class="time">12:15 – 13:30</span>
+  </div>
 
   <div class="vine">🌿 ❧ 🌱 ❧ 🌿</div>
  </div>
 </section>
 
+<!-- روزنامه دیواری -->
 <section id="newspaper" class="page">
  <button class="back-btn" onclick="showPage('dashboard')">← بازگشت</button>
 
  <div class="newspaper">
+
   <div class="news-title">
    <div style="font-size:40px">📰🌸🏆</div>
    <h2>روزنامهٔ دیواری یادگاری</h2>
@@ -438,8 +521,12 @@ footer{text-align:center;color:#98758e;padding:18px 10px 30px}
 
   <div class="birthday-box" style="margin-top:15px">
    <div style="font-size:34px">🎂🎀🎉</div>
-   <strong>امروز تولد این دختر خانومه، یادتون نره تبریک بگین 💞</strong>
-   <p id="birthdayMessage">به‌زودی تولدهای مدرسه در این قسمت نمایش داده می‌شوند. 🌷</p>
+
+   <strong>تولدهای دخترهای یادگاری 💞</strong>
+
+   <p id="birthdayMessage">
+    به‌زودی تولدهای مدرسه در این قسمت نمایش داده می‌شوند. 🌷
+   </p>
   </div>
 
   <div class="news-card">
@@ -455,33 +542,70 @@ footer{text-align:center;color:#98758e;padding:18px 10px 30px}
 
   <div class="news-card">
    <h3>💙 نظرات دلخواه شما 💙</h3>
+
    <p>پیشنهاد، نظر یا حرف قشنگت را برای مدرسه بنویس. 🌼</p>
 
-   <form id="commentForm" action="https://formspree.io/f/xqpebbbe" method="POST">
+   <form
+    id="commentForm"
+    action="https://formspree.io/f/xqpebbbe"
+    method="POST"
+   >
     <label for="commentName">اسم یا لقب (اختیاری)</label>
-    <input id="commentName" name="name" maxlength="60" placeholder="مثلاً یک دانش‌آموز یادگاری">
+
+    <input
+     id="commentName"
+     name="name"
+     maxlength="60"
+     placeholder="مثلاً یک دانش‌آموز یادگاری"
+    >
 
     <label for="commentText">نظر شما</label>
-    <textarea id="commentText" name="message" maxlength="1500" required placeholder="اینجا بنویس... 💙"></textarea>
 
-    <input type="hidden" name="_subject" value="نظر جدید روزنامه دبیرستان یادگاری">
+    <textarea
+     id="commentText"
+     name="message"
+     maxlength="1500"
+     required
+     placeholder="اینجا بنویس... 💙"
+    ></textarea>
 
-    <button class="primary-btn" type="submit" style="margin-top:12px">
+    <input
+     type="hidden"
+     name="_subject"
+     value="نظر جدید روزنامه دبیرستان یادگاری"
+    >
+
+    <button
+     class="primary-btn"
+     type="submit"
+     style="margin-top:12px"
+    >
      ارسال نظر 💌
     </button>
    </form>
 
    <p class="note">
-    نظرات از طریق Formspree ارسال می‌شوند و در سایت عمومی نمایش داده نمی‌شوند.
-    تنظیمات حریم خصوصی حساب Formspree را بررسی کن.
+    نظرات از طریق Formspree ارسال می‌شوند و به‌طور خودکار
+    در سایت نمایش داده نمی‌شوند. تنظیمات حریم خصوصی حساب
+    Formspree را بررسی کن.
    </p>
   </div>
+
  </div>
 </section>
 
 </main>
 
-<footer>❀ دبیرستان یادگاری؛ جایی برای شکوفایی رویاها ❀</footer>
+<!-- معرفی طراحان در پایین سایت -->
+<footer>
+ ❀ دبیرستان یادگاری؛ جایی برای شکوفایی رویاها ❀
+
+ <div class="designers">
+  🌸 طراحی و ساخت سایت 🌸
+  <br>
+  ستایش اربابی • نازنین جهاندیده • نیایش نوروزی
+ </div>
+</footer>
 
 <script>
 const classes=[
@@ -517,7 +641,11 @@ const schoolStaff=[
 
 const classData={
  '11math':{
-  students:['ستایش','نازنین','نیایش','ناسیه','فاطمه','حسنی','هستی','حوریه','الیسا','اندیا'],
+  students:[
+   'ستایش','نازنین','نیایش','ناسیه','فاطمه',
+   'حسنی','هستی','حوریه','الیسا','اندیا'
+  ],
+
   lessons:[
    ['حسابان','سهیلا حیدری'],
    ['آمار و احتمال','سهیلا حیدری'],
@@ -535,6 +663,7 @@ const classData={
    ['عربی','مدینه دهقان'],
    ['ورزش','نامشخص']
   ],
+
   schedule:[
    ['شنبه','عربی، شیمی، دین و زندگی'],
    ['یکشنبه','فیزیک، حسابان، تاریخ، هندسه'],
@@ -548,9 +677,16 @@ const classData={
 let currentClass=null;
 
 function showPage(id){
- document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.querySelectorAll('.page').forEach(p=>{
+  p.classList.remove('active');
+ });
+
  const page=document.getElementById(id);
- if(page)page.classList.add('active');
+
+ if(page){
+  page.classList.add('active');
+ }
+
  window.scrollTo({top:0,behavior:'smooth'});
 }
 
@@ -560,18 +696,28 @@ function renderClasses(){
 
  classes.forEach(c=>{
   const b=document.createElement('button');
+
   b.className='tile class-tile '+c.theme;
-  b.innerHTML=`<span class="emoji">${c.emoji}</span><strong>${c.name}</strong><small>ورود به کلاس ✨</small>`;
+
+  b.innerHTML=`
+   <span class="emoji">${c.emoji}</span>
+   <strong>${c.name}</strong>
+   <small>ورود به کلاس ✨</small>
+  `;
+
   b.onclick=()=>enterClass(c.id);
+
   grid.appendChild(b);
  });
 }
 
 function enterClass(id){
  const c=classes.find(x=>x.id===id);
+
  if(!c)return;
 
  const password=prompt('رمز ورود کلاس '+c.name+' را وارد کن:');
+
  if(password===null)return;
 
  if(password!==c.pass){
@@ -580,8 +726,13 @@ function enterClass(id){
  }
 
  currentClass=c;
- document.getElementById('roomTitle').textContent=c.emoji+' '+c.name;
- document.getElementById('roomContent').innerHTML='<p class="note">یکی از چهار بخش بالا را انتخاب کن. 🌸</p>';
+
+ document.getElementById('roomTitle').textContent=
+  c.emoji+' '+c.name;
+
+ document.getElementById('roomContent').innerHTML=
+  '<p class="note">یکی از چهار بخش بالا را انتخاب کن. 🌸</p>';
+
  showPage('classroom');
 }
 
@@ -596,7 +747,9 @@ function openRoomSection(section){
 
   content.innerHTML=students.length
    ?'<h3>👩🏻‍🎓 دانش‌آموزان کلاس</h3>'+
-    students.map((n,i)=>`<div class="item-card">${i+1}. ${escapeHTML(n)}</div>`).join('')
+    students.map((n,i)=>
+     `<div class="item-card">${i+1}. ${escapeHTML(n)}</div>`
+    ).join('')
    :'<div class="item-card">فهرست دانش‌آموزان این کلاس هنوز ثبت نشده است. 🌷</div>';
  }
 
@@ -608,7 +761,11 @@ function openRoomSection(section){
     lessons.map((l,i)=>`
      <div class="item-card">
       📖 ${escapeHTML(l[0])}<br>
-      <button onclick="toggleDetail('lesson-${i}')">مشاهدهٔ دبیر</button>
+
+      <button onclick="toggleDetail('lesson-${i}')">
+       مشاهدهٔ دبیر
+      </button>
+
       <div class="item-detail" id="lesson-${i}">
        👩🏻‍🏫 دبیر: ${escapeHTML(l[1])}
       </div>
@@ -626,9 +783,17 @@ function openRoomSection(section){
     teachers.map((t,i)=>`
      <div class="item-card">
       👩🏻‍🏫 ${escapeHTML(t)}<br>
-      <button onclick="toggleDetail('teacher-${i}')">مشاهدهٔ درس‌ها</button>
+
+      <button onclick="toggleDetail('teacher-${i}')">
+       مشاهدهٔ درس‌ها
+      </button>
+
       <div class="item-detail" id="teacher-${i}">
-       📚 درس‌ها: ${lessons.filter(x=>x[1]===t).map(x=>escapeHTML(x[0])).join('، ')}
+       📚 درس‌ها:
+       ${lessons
+        .filter(x=>x[1]===t)
+        .map(x=>escapeHTML(x[0]))
+        .join('، ')}
       </div>
      </div>
     `).join('')
@@ -652,7 +817,11 @@ function openRoomSection(section){
 
 function toggleDetail(id){
  const el=document.getElementById(id);
- if(el)el.style.display=el.style.display==='block'?'none':'block';
+
+ if(el){
+  el.style.display=
+   el.style.display==='block'?'none':'block';
+ }
 }
 
 function escapeHTML(value){
