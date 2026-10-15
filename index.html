@@ -9,192 +9,776 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap');
 
-:root{
- --blue:#1769aa;
- --blue2:#318bd2;
- --light:#eaf5ff;
- --pale:#f5faff;
- --navy:#123858;
- --border:#c8e2f8;
- --white:#fff;
- --shadow:0 8px 25px #174e7714;
+:root {
+  --blue: #1769aa;
+  --blue2: #318bd2;
+  --light: #eaf5ff;
+  --pale: #f5faff;
+  --navy: #123858;
+  --border: #c8e2f8;
 }
 
-*{box-sizing:border-box}
-
-body{
- margin:0;
- font-family:Vazirmatn,Tahoma,sans-serif;
- color:var(--navy);
- background:
- radial-gradient(circle at 5% 5%,#d8edff,transparent 30%),
- radial-gradient(circle at 95% 85%,#e3f3ff,transparent 30%),
- #f7fbff;
- min-height:100vh;
+* {
+  box-sizing: border-box;
 }
 
-button,input,textarea{font:inherit}
-button{cursor:pointer}
-
-header{
- text-align:center;
- padding:22px 14px 14px;
+body {
+  margin: 0;
+  font-family: Vazirmatn, Tahoma, sans-serif;
+  color: var(--navy);
+  background:
+    radial-gradient(circle at 5% 5%, #d8edff, transparent 30%),
+    radial-gradient(circle at 95% 85%, #e3f3ff, transparent 30%),
+    #f7fbff;
+  min-height: 100vh;
 }
 
-.school-name{
- font-size:clamp(25px,6vw,42px);
- font-weight:900;
- color:var(--blue);
+button, input, textarea {
+  font: inherit;
 }
 
-.subtitle{
- color:#577b99;
- margin-top:7px;
- line-height:1.9;
+button {
+  cursor: pointer;
 }
 
-main{
- width:min(100% - 24px,1000px);
- margin:0 auto 35px;
+header {
+  text-align: center;
+  padding: 22px 14px 14px;
 }
 
-.page{display:none;animation:appear .3s ease}
-.page.active{display:block}
-
-@keyframes appear{
- from{opacity:0;transform:translateY(8px)}
- to{opacity:1;transform:translateY(0)}
+.school-name {
+  font-size: clamp(25px, 6vw, 42px);
+  font-weight: 900;
+  color: var(--blue);
 }
 
-.panel{
- border:1px solid var(--border);
- border-radius:25px;
- padding:20px;
- background:#ffffffed;
- box-shadow:var(--shadow);
- margin:14px 0;
+.subtitle {
+  color: #577b99;
+  margin-top: 7px;
+  line-height: 1.9;
 }
 
-.hero{
- text-align:center;
- padding:30px 18px;
- border-radius:28px;
- border:2px solid #b7d9f5;
- background:linear-gradient(145deg,#e3f2ff,#fff 55%,#d8ebff);
- box-shadow:var(--shadow);
- overflow:hidden;
+main {
+  width: min(100% - 24px, 1000px);
+  margin: 0 auto 35px;
 }
 
-.school-logo{
- display:block;
- width:min(190px,65%);
- max-height:190px;
- height:auto;
- object-fit:contain;
- margin:0 auto 15px;
- filter:drop-shadow(0 5px 9px #1769aa20);
+.page {
+  display: none;
+  animation: appear .3s ease;
 }
 
-.hero h2{
- color:var(--blue);
- font-size:clamp(21px,5vw,29px);
+.page.active {
+  display: block;
 }
 
-.hero p{
- line-height:2.1;
- color:#426681;
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.primary-btn,.back-btn{
- border:0;
- border-radius:14px;
- padding:12px 20px;
- color:white;
- background:linear-gradient(135deg,#1769aa,#3998e5);
- box-shadow:0 4px 12px #1769aa25;
+.panel {
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  padding: 20px;
+  background: #ffffffed;
+  box-shadow: 0 8px 25px #174e7714;
+  margin: 14px 0;
 }
 
-.primary-btn:active,.back-btn:active{transform:scale(.98)}
-
-.back-btn{
- background:#547a9a;
- margin:4px 0 12px;
+.hero {
+  text-align: center;
+  padding: 30px 18px;
+  border-radius: 28px;
+  border: 2px solid #b7d9f5;
+  background: linear-gradient(145deg, #e3f2ff, #fff 55%, #d8ebff);
+  box-shadow: 0 8px 25px #174e7714;
 }
 
-.section-title{
- text-align:center;
- font-size:clamp(19px,4vw,25px);
- margin:12px 0 20px;
- color:var(--blue);
+.school-logo {
+  display: block;
+  width: min(190px, 65%);
+  max-height: 190px;
+  object-fit: contain;
+  margin: 0 auto 15px;
 }
 
-.dashboard,.class-grid,.staff-grid{
- display:grid;
- grid-template-columns:repeat(2,minmax(0,1fr));
- gap:13px;
+.hero h2 {
+  color: var(--blue);
+  font-size: clamp(21px, 5vw, 29px);
 }
 
-.tile{
- min-height:140px;
- border-radius:22px;
- border:1px solid var(--border);
- background:linear-gradient(145deg,#fff,#eaf5ff);
- box-shadow:0 5px 17px #174e7710;
- padding:18px 9px;
- text-align:center;
- color:var(--navy);
- transition:transform .2s,box-shadow .2s;
+.hero p {
+  line-height: 2.1;
+  color: #426681;
 }
 
-.tile:active{transform:scale(.97)}
-.tile:hover{box-shadow:0 8px 20px #1769aa20}
-
-.tile .emoji{
- display:block;
- font-size:35px;
- margin-bottom:9px;
+.primary-btn, .back-btn {
+  border: 0;
+  border-radius: 14px;
+  padding: 12px 20px;
+  color: white;
+  background: linear-gradient(135deg, #1769aa, #3998e5);
+  box-shadow: 0 4px 12px #1769aa25;
 }
 
-.tile strong{
- display:block;
- font-size:16px;
- line-height:1.8;
+.back-btn {
+  background: #547a9a;
+  margin: 4px 0 12px;
 }
 
-.tile small{
- display:block;
- margin-top:7px;
- line-height:1.8;
- color:#527590;
+.section-title {
+  text-align: center;
+  font-size: clamp(19px, 4vw, 25px);
+  margin: 12px 0 20px;
+  color: var(--blue);
 }
 
-.class-tile{min-height:125px}
-.math{background:linear-gradient(145deg,#e4f2ff,#c6e4ff);border-color:#9bcdf4}
-.science{background:linear-gradient(145deg,#edf7ff,#d5eaff);border-color:#a7d3f4}
-.humanities{background:linear-gradient(145deg,#f1f7ff,#dce9fa);border-color:#c0d2ed}
-
-.class-room{
- background:white;
- border-radius:24px;
- border:1px solid var(--border);
- padding:17px;
- box-shadow:var(--shadow);
+.dashboard, .class-grid, .staff-grid, .room-menu {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
 }
 
-.room-menu{margin-bottom:18px}
-.room-menu .tile{min-height:112px;padding:13px 6px}
-
-.item-card{
- background:#f7fbff;
- border:1px solid #d7eafa;
- border-radius:15px;
- padding:13px;
- margin:10px 0;
- line-height:1.9;
- overflow-wrap:anywhere;
+.tile {
+  min-height: 130px;
+  border-radius: 22px;
+  border: 1px solid var(--border);
+  background: linear-gradient(145deg, #fff, #eaf5ff);
+  box-shadow: 0 5px 17px #174e7710;
+  padding: 16px 9px;
+  text-align: center;
+  color: var(--navy);
 }
 
-.item-card button{
- border:0;
- background:#dceeff;
- color:#
+.tile .emoji {
+  display: block;
+  font-size: 35px;
+  margin-bottom: 9px;
+}
+
+.tile strong {
+  display: block;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.tile small {
+  display: block;
+  margin-top: 7px;
+  line-height: 1.8;
+  color: #527590;
+}
+
+.math {
+  background: linear-gradient(145deg, #e4f2ff, #c6e4ff);
+}
+
+.science {
+  background: linear-gradient(145deg, #edf7ff, #d5eaff);
+}
+
+.humanities {
+  background: linear-gradient(145deg, #f1f7ff, #dce9fa);
+}
+
+.class-room {
+  background: white;
+  border-radius: 24px;
+  border: 1px solid var(--border);
+  padding: 17px;
+  box-shadow: 0 8px 25px #174e7714;
+}
+
+.item-card {
+  background: #f7fbff;
+  border: 1px solid #d7eafa;
+  border-radius: 15px;
+  padding: 13px;
+  margin: 10px 0;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.item-card button {
+  border: 0;
+  background: #dceeff;
+  color: var(--blue);
+  border-radius: 10px;
+  padding: 8px 12px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.form-field {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin: 10px 0;
+  background: white;
+}
+
+.notice {
+  background: #eaf5ff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 12px;
+  line-height: 1.9;
+  margin: 12px 0;
+}
+
+footer {
+  text-align: center;
+  color: #6686a0;
+  font-size: 13px;
+  padding: 10px 15px 25px;
+  line-height: 1.9;
+}
+
+@media (min-width: 650px) {
+  .dashboard, .class-grid, .staff-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .room-menu {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="school-name">دبیرستان یادگاری 💙</div>
+  <div class="subtitle">جایی برای یادگیری، دوستی و خاطره‌سازی 🌷</div>
+</header>
+
+<main>
+
+<!-- صفحه ورود -->
+<section id="welcomePage" class="page active">
+  <div class="hero">
+
+    <img
+      src="./InShot_20261013_015253183.png"
+      alt="لوگوی دبیرستان یادگاری"
+      class="school-logo"
+      onerror="this.style.display='none'"
+    >
+
+    <h2>به دبیرستان یادگاری خوش آمدید</h2>
+
+    <p>
+      اینجا خانه‌ای برای یادگیری، دوستی و ساختن خاطرات قشنگ مدرسه است. 💙
+    </p>
+
+    <button class="primary-btn" onclick="showPage('dashboardPage')">
+      ورود به مدرسه ✨
+    </button>
+
+  </div>
+</section>
+
+<!-- صفحه اصلی -->
+<section id="dashboardPage" class="page">
+
+  <button class="back-btn" onclick="showPage('welcomePage')">
+    ← صفحه ورود
+  </button>
+
+  <h2 class="section-title">به کدام بخش می‌روید؟ 💙</h2>
+
+  <div class="dashboard">
+
+    <button class="tile" onclick="showPage('classesPage')">
+      <span class="emoji">🏫</span>
+      <strong>کلاس‌ها</strong>
+      <small>دانش‌آموزان، دبیران و برنامه کلاسی</small>
+    </button>
+
+    <button class="tile" onclick="showPage('staffPage')">
+      <span class="emoji">👩🏻‍🏫</span>
+      <strong>دبیران و مدیران مدرسه</strong>
+      <small>آشنایی با کادر مدرسه</small>
+    </button>
+
+    <button class="tile" onclick="showPage('newsPage')">
+      <span class="emoji">📰</span>
+      <strong>نشریه مدرسه</strong>
+      <small>خبرها و نوشته‌های مدرسه</small>
+    </button>
+
+    <button class="tile" onclick="showPage('birthdayPage')">
+      <span class="emoji">🎂</span>
+      <strong>تولدها و پیام‌ها</strong>
+      <small>مناسبت‌ها و پیام‌های دوستانه</small>
+    </button>
+
+  </div>
+</section>
+
+<!-- فهرست کلاس‌ها -->
+<section id="classesPage" class="page">
+
+  <button class="back-btn" onclick="showPage('dashboardPage')">
+    ← بازگشت
+  </button>
+
+  <h2 class="section-title">کلاس‌های دبیرستان 💙</h2>
+
+  <div class="class-grid">
+
+    <button class="tile science" onclick="openClass('10exp')">
+      <span class="emoji">🧬</span>
+      <strong>دهم تجربی</strong>
+    </button>
+
+    <button class="tile science" onclick="openClass('11exp')">
+      <span class="emoji">🔬</span>
+      <strong>یازدهم تجربی</strong>
+    </button>
+
+    <button class="tile science" onclick="openClass('12exp')">
+      <span class="emoji">🧪</span>
+      <strong>دوازدهم تجربی</strong>
+    </button>
+
+    <button class="tile math" onclick="openClass('10math')">
+      <span class="emoji">📐</span>
+      <strong>دهم ریاضی</strong>
+    </button>
+
+    <button class="tile math" onclick="openClass('11math')">
+      <span class="emoji">📘</span>
+      <strong>یازدهم ریاضی</strong>
+    </button>
+
+    <button class="tile humanities" onclick="openClass('10hum')">
+      <span class="emoji">📚</span>
+      <strong>دهم انسانی</strong>
+    </button>
+
+    <button class="tile humanities" onclick="openClass('11hum')">
+      <span class="emoji">✒️</span>
+      <strong>یازدهم انسانی</strong>
+    </button>
+
+    <button class="tile humanities" onclick="openClass('12hum')">
+      <span class="emoji">📖</span>
+      <strong>دوازدهم انسانی</strong>
+    </button>
+
+  </div>
+</section>
+
+<!-- صفحه اختصاصی کلاس -->
+<section id="classPage" class="page">
+
+  <button class="back-btn" onclick="showPage('classesPage')">
+    ← فهرست کلاس‌ها
+  </button>
+
+  <h2 id="classTitle" class="section-title">کلاس</h2>
+
+  <div class="class-room">
+
+    <div class="room-menu">
+
+      <button class="tile" onclick="showClassSection('students')">
+        <span class="emoji">👩🏻‍🎓</span>
+        <strong>دانش‌آموزان</strong>
+      </button>
+
+      <button class="tile" onclick="showClassSection('teachers')">
+        <span class="emoji">👩🏻‍🏫</span>
+        <strong>دبیران</strong>
+      </button>
+
+      <button class="tile" onclick="showClassSection('lessons')">
+        <span class="emoji">📚</span>
+        <strong>درس‌ها</strong>
+      </button>
+
+      <button class="tile" onclick="showClassSection('schedule')">
+        <span class="emoji">🗓️</span>
+        <strong>برنامه کلاسی</strong>
+      </button>
+
+    </div>
+
+    <div id="classContent" class="notice">
+      برای دیدن اطلاعات، یکی از چهار گزینه بالا را انتخاب کنید. 🌸
+    </div>
+
+  </div>
+</section>
+
+<!-- دبیران و مدیران -->
+<section id="staffPage" class="page">
+
+  <button class="back-btn" onclick="showPage('dashboardPage')">
+    ← بازگشت
+  </button>
+
+  <h2 class="section-title">دبیران و مدیران مدرسه 👩🏻‍🏫</h2>
+
+  <div id="staffList" class="staff-grid"></div>
+
+</section>
+
+<!-- نشریه -->
+<section id="newsPage" class="page">
+
+  <button class="back-btn" onclick="showPage('dashboardPage')">
+    ← بازگشت
+  </button>
+
+  <h2 class="section-title">نشریه دبیرستان یادگاری 📰</h2>
+
+  <div class="panel">
+
+    <p>خبرها و نوشته‌های مدرسه را می‌توانی اینجا ارسال کنی.</p>
+
+    <form action="https://formspree.io/f/xqpebbbe" method="POST">
+
+      <input class="form-field" name="name" placeholder="نام شما (اختیاری)">
+
+      <input class="form-field" name="title" placeholder="عنوان نوشته" required>
+
+      <textarea class="form-field" name="message" rows="5"
+        placeholder="متن نوشته‌ات را اینجا بنویس..." required></textarea>
+
+      <button class="primary-btn" type="submit">ارسال نوشته 💌</button>
+
+    </form>
+
+  </div>
+</section>
+
+<!-- تولدها -->
+<section id="birthdayPage" class="page">
+
+  <button class="back-btn" onclick="showPage('dashboardPage')">
+    ← بازگشت
+  </button>
+
+  <h2 class="section-title">تولدها و پیام‌های دوستانه 🎂</h2>
+
+  <div class="panel">
+
+    <p>برای ثبت تولد یا ارسال پیام دوستانه از فرم زیر استفاده کن.</p>
+
+    <form action="https://formspree.io/f/xqpebbbe" method="POST">
+
+      <input class="form-field" name="sender" placeholder="نام فرستنده (اختیاری)">
+
+      <input class="form-field" name="birthday_name"
+        placeholder="نام شخص" required>
+
+      <input class="form-field" name="birthday_date"
+        placeholder="تاریخ تولد، مثلاً ۱۵ مهر">
+
+      <textarea class="form-field" name="birthday_message" rows="4"
+        placeholder="پیام تبریک یا متن دلخواه"></textarea>
+
+      <button class="primary-btn" type="submit">ارسال پیام 🎈</button>
+
+    </form>
+
+  </div>
+</section>
+
+</main>
+
+<footer>
+  دبیرستان یادگاری 💙<br>
+  ساخته‌شده با عشق به یادگیری و دوستی 🌷
+</footer>
+<script>
+/* نام کلاس‌ها */
+const classNames = {
+  '10exp': 'دهم تجربی',
+  '11exp': 'یازدهم تجربی',
+  '12exp': 'دوازدهم تجربی',
+  '10math': 'دهم ریاضی',
+  '11math': 'یازدهم ریاضی',
+  '10hum': 'دهم انسانی',
+  '11hum': 'یازدهم انسانی',
+  '12hum': 'دوازدهم انسانی'
+};
+
+/* کدهای ورود آزمایشی کلاس‌ها */
+const classPasswords = {
+  '10exp': '2222',
+  '11exp': '4444',
+  '12exp': '6666',
+  '10math': '3333',
+  '11math': '5555',
+  '10hum': '1111',
+  '11hum': '7777',
+  '12hum': '8888'
+};
+
+/* اطلاعات دبیران و مدیران */
+const schoolStaff = [
+  ['مدیر مدرسه', 'بهناز شرقی', '👩🏻‍💼'],
+  ['معاون مدرسه', 'حبیبه انصاری', '🌷'],
+  ['معاون مدرسه', 'فایقه سوداگر', '🌷'],
+  ['سرپرست', 'فریده آگاهی', '📋'],
+  ['سرپرست', 'سارا اسماعیلی', '📋'],
+  ['دبیر زیست‌شناسی و آزمایشگاه', 'الهام امیرپور', '🧬'],
+  ['دبیر زبان دوازدهم', 'مریم برنا', '🌍'],
+  ['دبیر علوم اجتماعی رشته انسانی', 'یاسمن حاجی‌زاده', '📚'],
+  ['دبیر ریاضی، حسابان، آمار و احتمال و هندسه', 'سهیلا حیدری', '📐'],
+  ['دبیر کار و دانش و عربی', 'مدینه دهقان', '✏️'],
+  ['مشاور مدرسه', 'زینب سروی', '💙'],
+  ['دبیر ادبیات و نگارش', 'منیژه نوروزی', '📝'],
+  ['دبیر تاریخ، زمین‌شناسی و انسان و محیط زیست', 'مهناز یادگارفرد', '🌱'],
+  ['دبیر فیزیک', 'خانم فاطمی', '⚡'],
+  ['دبیر زبان', 'طاهره شاه‌محمدی', '🌐'],
+  ['دبیر شیمی', 'زهرا قربانی', '🧪'],
+  ['دبیر دین و زندگی', 'نادیه عزیزی', '🌼']
+];
+
+/* اطلاعات یازدهم ریاضی */
+const classData = {
+  '11math': {
+    students: [
+      'ستایش',
+      'نازنین',
+      'نیایش',
+      'ناسیه',
+      'فاطمه',
+      'حسنی',
+      'هستی',
+      'حوریه',
+      'الیسا',
+      'اندیا'
+    ],
+
+    lessons: [
+      ['حسابان', 'سهیلا حیدری'],
+      ['آمار و احتمال', 'سهیلا حیدری'],
+      ['هندسه', 'سهیلا حیدری'],
+      ['ادبیات فارسی', 'منیژه نوروزی'],
+      ['نگارش', 'منیژه نوروزی'],
+      ['زمین‌شناسی', 'مهناز یادگارفرد'],
+      ['تاریخ', 'مهناز یادگارفرد'],
+      ['انسان و محیط زیست', 'مهناز یادگارفرد'],
+      ['فیزیک', 'خانم فاطمی'],
+      ['زبان انگلیسی', 'طاهره شاه‌محمدی'],
+      ['شیمی', 'زهرا قربانی'],
+      ['دین و زندگی', 'نادیه عزیزی'],
+      ['عربی', 'مدینه دهقان'],
+      ['کار و دانش', 'مدینه دهقان'],
+      ['هنر', 'مدینه دهقان'],
+      ['ورزش', 'نامشخص']
+    ],
+
+    schedule: [
+      ['شنبه', 'عربی، شیمی، دین و زندگی'],
+      ['یکشنبه', 'فیزیک، حسابان، تاریخ، هندسه'],
+      ['دوشنبه', 'آمار و احتمال، زبان یا شیمی، زمین‌شناسی، کار و هنر'],
+      ['سه‌شنبه', 'انسان و محیط زیست، نگارش، زبان، ادبیات'],
+      ['چهارشنبه', 'ورزش، فیزیک، حسابان']
+    ]
+  }
+};
+
+/* تغییر صفحه */
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(function(page) {
+    page.classList.remove('active');
+  });
+
+  const target = document.getElementById(id);
+
+  if (target) {
+    target.classList.add('active');
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+/* ورود به کلاس */
+let currentClass = '';
+
+function openClass(id) {
+  const entered = prompt(
+    'کد ورود ' + classNames[id] + ' را وارد کنید:'
+  );
+
+  if (entered === null) {
+    return;
+  }
+
+  if (entered !== classPasswords[id]) {
+    alert('کد ورود درست نیست. دوباره امتحان کن 💙');
+    return;
+  }
+
+  currentClass = id;
+
+  document.getElementById('classTitle').textContent =
+    classNames[id] + ' 💙';
+
+  document.getElementById('classContent').innerHTML =
+    'برای دیدن اطلاعات کلاس، یکی از چهار گزینه بالا را انتخاب کن. 🌸';
+
+  showPage('classPage');
+}
+
+/* نمایش اطلاعات داخل کلاس */
+function showClassSection(section) {
+  const box = document.getElementById('classContent');
+  const data = classData[currentClass];
+
+  if (!data) {
+    box.innerHTML =
+      '<div class="notice">' +
+      'اطلاعات این کلاس هنوز تکمیل نشده است. 💙' +
+      '</div>';
+    return;
+  }
+
+  if (section === 'students') {
+    box.innerHTML =
+      '<h3>👩🏻‍🎓 دانش‌آموزان ' +
+      classNames[currentClass] +
+      '</h3>' +
+      data.students.map(function(name, index) {
+        return (
+          '<div class="item-card">' +
+          (index + 1) + '. ' +
+          escapeHtml(name) +
+          '</div>'
+        );
+      }).join('');
+  }
+
+  else if (section === 'teachers') {
+    const teachers = [...new Set(
+      data.lessons
+        .map(function(item) {
+          return item[1];
+        })
+        .filter(function(name) {
+          return name !== 'نامشخص';
+        })
+    )];
+
+    box.innerHTML =
+      '<h3>👩🏻‍🏫 دبیران کلاس</h3>' +
+      teachers.map(function(name) {
+        return (
+          '<div class="item-card">🌷 ' +
+          escapeHtml(name) +
+          '</div>'
+        );
+      }).join('');
+  }
+
+  else if (section === 'lessons') {
+    box.innerHTML =
+      '<h3>📚 درس‌ها</h3>' +
+      '<p>برای دیدن نام دبیر، روی درس موردنظر بزن.</p>' +
+
+      data.lessons.map(function(item, index) {
+        return (
+          '<div class="item-card">' +
+          '<button type="button" onclick="toggleTeacher(' +
+          index + ')">' +
+          escapeHtml(item[0]) +
+          ' 👇</button>' +
+
+          '<div id="teacher-' + index + '" class="hidden">' +
+          'دبیر: ' + escapeHtml(item[1]) +
+          '</div>' +
+          '</div>'
+        );
+      }).join('');
+  }
+
+  else if (section === 'schedule') {
+    box.innerHTML =
+      '<h3>🗓️ برنامه کلاسی</h3>' +
+      '<div style="overflow-x:auto">' +
+      '<table style="width:100%;border-collapse:collapse;line-height:2">' +
+      '<thead><tr>' +
+      '<th style="border:1px solid #c8e2f8;padding:8px;background:#eaf5ff">روز</th>' +
+      '<th style="border:1px solid #c8e2f8;padding:8px;background:#eaf5ff">درس‌ها</th>' +
+      '</tr></thead><tbody>' +
+
+      data.schedule.map(function(row) {
+        return (
+          '<tr>' +
+          '<td style="border:1px solid #c8e2f8;padding:8px">' +
+          escapeHtml(row[0]) +
+          '</td>' +
+          '<td style="border:1px solid #c8e2f8;padding:8px">' +
+          escapeHtml(row[1]) +
+          '</td>' +
+          '</tr>'
+        );
+      }).join('') +
+
+      '</tbody></table></div>';
+  }
+}
+
+/* باز و بسته کردن نام دبیر */
+function toggleTeacher(index) {
+  const element = document.getElementById('teacher-' + index);
+
+  if (element) {
+    element.classList.toggle('hidden');
+  }
+}
+
+/* جلوگیری از نمایش ناخواسته کدهای واردشده */
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, function(char) {
+    return {
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    }[char];
+  });
+}
+
+/* نمایش فهرست کادر مدرسه */
+function renderStaff() {
+  const list = document.getElementById('staffList');
+
+  list.innerHTML = schoolStaff.map(function(person) {
+    return (
+      '<div class="item-card">' +
+      '<div style="font-size:28px">' + person[2] + '</div>' +
+      '<strong>' + escapeHtml(person[0]) + '</strong><br>' +
+      escapeHtml(person[1]) +
+      '</div>'
+    );
+  }).join('');
+}
+
+renderStaff();
+</script>
+
+</body>
+</html>
