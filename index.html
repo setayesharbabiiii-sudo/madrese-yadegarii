@@ -3,1163 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#07185f">
-<title>دبیرستان یادگاری</title>
+<meta name="theme-color" content="#1769aa">
+<title>دبیرستان یادگاری 💙</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;900&display=swap');
 
-:root {
-  --navy: #071653;
-  --blue: #1559d9;
-  --purple: #7042cf;
-  --light: #f5f7ff;
-  --text: #17275e;
-  --muted: #6d7693;
-  --border: #e5eafb;
+:root{
+ --blue:#1769aa;
+ --blue2:#318bd2;
+ --light:#eaf5ff;
+ --pale:#f5faff;
+ --navy:#123858;
+ --border:#c8e2f8;
+ --white:#fff;
+ --shadow:0 8px 25px #174e7714;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: Vazirmatn, Tahoma, sans-serif;
-  background:
-    radial-gradient(circle at 5% 10%, #dce8ff, transparent 30%),
-    radial-gradient(circle at 95% 45%, #eee6ff, transparent 28%),
-    #f8f9ff;
-  color: var(--text);
-}
-
-button, input, textarea {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-button:focus-visible, a:focus-visible {
-  outline: 3px solid #8cb8ff;
-  outline-offset: 3px;
-}
-
-.container {
-  width: min(1200px, 94%);
-  margin: auto;
-}
-
-.hidden {
-  display: none !important;
-}
-
-/* صفحه ورود */
-
-#entry {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-  background:
-    radial-gradient(circle at 10% 15%, #d7e6ff, transparent 35%),
-    radial-gradient(circle at 90% 85%, #e4d9ff, transparent 35%),
-    #f8faff;
-}
-
-.entry-card {
-  width: min(440px, 100%);
-  padding: 35px 25px;
-  border-radius: 28px;
-  background: white;
-  text-align: center;
-  border: 1px solid white;
-  box-shadow: 0 25px 80px #112b7020;
-}
-
-.logo {
-  width: 65px;
-  height: 65px;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
-  color: white;
-  font-size: 30px;
-  font-weight: 800;
-  background: radial-gradient(circle at 30% 25%, #a9d5ff, #1763dc 45%, #10145d 75%);
-  border: 4px solid #d5e4ff;
-  box-shadow: 0 0 0 3px #275edc20;
-}
-
-.entry-card .logo {
-  width: 90px;
-  height: 90px;
-  font-size: 40px;
-  margin: auto;
-}
-
-.entry-card h1 {
-  font-size: 27px;
-  color: var(--navy);
-  margin: 20px 0 10px;
-}
-
-.entry-card p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 2.2;
-  margin-bottom: 25px;
-}
-
-.badge {
-  display: inline-block;
-  padding: 7px 14px;
-  border-radius: 30px;
-  background: #eee9ff;
-  color: var(--purple);
-  font-size: 12px;
-  font-weight: 700;
-}
-
-/* دکمه‌ها */
-
-.btn {
-  border: 0;
-  border-radius: 13px;
-  padding: 12px 18px;
-  font-weight: 700;
-  font-size: 13px;
-  transition: .2s;
-}
-
-.btn:hover {
-  transform: translateY(-2px);
-}
-
-.primary {
-  color: white;
-  background: linear-gradient(110deg, #1767ed, #102d9e);
-  box-shadow: 0 8px 20px #1559d933;
-}
-
-.outline {
-  color: var(--navy);
-  background: white;
-  border: 1px solid #aabbe8;
-}
-
-/* منوی بالا */
-
-header {
-  position: sticky;
-  top: 8px;
-  z-index: 50;
-  width: 96%;
-  margin: 12px auto 0;
-  padding: 12px 17px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 15px;
-  border-radius: 28px;
-  background: linear-gradient(105deg, #06134c, #091c70 70%, #0b319b);
-  color: white;
-  box-shadow: 0 12px 35px #091b6825;
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  flex-shrink: 0;
-  color: white;
-  text-decoration: none;
-}
-
-.brand .logo {
-  width: 50px;
-  height: 50px;
-  font-size: 24px;
-}
-
-.brand strong {
-  display: block;
-  font-size: 15px;
-}
-
-.brand small {
-  display: block;
-  margin-top: 4px;
-  font-size: 10px;
-  color: #cbd9ff;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2px;
-  flex: 1;
-}
-
-nav button {
-  border: 0;
-  color: #e9eeff;
-  background: transparent;
-  padding: 11px 9px;
-  border-radius: 10px;
-  font-size: 11px;
-  white-space: nowrap;
-}
-
-nav button:hover,
-nav button.active {
-  color: #8fc7ff;
-  background: #ffffff10;
-  box-shadow: inset 0 -2px #368aff;
-}
-
-.login-button {
-  color: white;
-  background: #ffffff12;
-  border: 1px solid #ffffff35;
-  border-radius: 22px;
-  padding: 10px 12px;
-  font-size: 11px;
-  white-space: nowrap;
-}
-
-/* صفحه اصلی */
-
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 30px;
-  padding: 45px 0 30px;
-  min-height: 400px;
-}
-
-.hero-copy h1 {
-  font-size: clamp(28px, 4vw, 43px);
-  line-height: 1.8;
-  margin: 15px 0;
-  color: #0b236f;
-}
-
-.gradient {
-  background: linear-gradient(90deg, #155fe5, #7642d0);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
-.hero-copy p {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 2.3;
-}
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 22px;
-}
-
-/* تصویرسازی ساختمان مدرسه */
-
-.hero-art {
-  min-height: 330px;
-  display: grid;
-  place-items: center;
-  position: relative;
-  overflow: hidden;
-}
-
-.rings {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-  border: 22px solid #2364e8;
-  border-left-color: #b4caff;
-  border-bottom-color: #7542d1;
-  border-radius: 50%;
-  transform: rotate(-30deg);
-}
-
-.rings:after {
-  content: "";
-  position: absolute;
-  inset: -42px;
-  border: 12px solid #d9e3ff;
-  border-right-color: #9d8cf5;
-  border-radius: 50%;
-}
-
-.building {
-  position: relative;
-  width: min(410px, 90%);
-  height: 225px;
-  border-radius: 10px 10px 3px 3px;
-  overflow: hidden;
-  background: linear-gradient(145deg, #fff, #dce8ff);
-  border: 2px solid #cad8f4;
-  box-shadow: 0 20px 45px #0b236d25;
-}
-
-.roof {
-  height: 25px;
-  background: linear-gradient(90deg, #c7d8fa, white, #c7d8fa);
-  border-bottom: 4px solid #a8bde8;
-}
-
-.windows {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 6px;
-  padding: 12px;
-}
-
-.windows span {
-  height: 65px;
-  background: linear-gradient(135deg, #80b8ef, #153c81);
-  border: 3px solid #d5e0f4;
-}
-
-.door {
-  position: absolute;
-  bottom: 0;
-  left: 35%;
-  width: 30%;
-  height: 82px;
-  background: linear-gradient(90deg, #a7c2e9, white, #a7c2e9);
-  border: 4px solid #c2d2ef;
-  border-bottom: 0;
-}
-
-.door:after {
-  content: "یادگاری";
-  position: absolute;
-  top: 10px;
-  left: 0;
-  right: 0;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 800;
-  color: #143b9c;
-}
-
-.ground {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 13px;
-  background: #9bbd87;
-}
-
-/* کارت‌های امکانات */
-
-.features {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 13px;
-  margin: 10px auto 20px;
-}
-
-.feature {
-  background: #ffffffed;
-  border: 1px solid #e8edfa;
-  border-radius: 20px;
-  padding: 16px 12px;
-  min-height: 105px;
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  box-shadow: 0 8px 24px #12265e0a;
-}
-
-.icon {
-  width: 51px;
-  height: 51px;
-  flex: 0 0 51px;
-  display: grid;
-  place-items: center;
-  border-radius: 17px;
-  background: linear-gradient(145deg, #3989ff, #1253c8);
-  color: white;
-  font-size: 24px;
-}
-
-.icon.purple {
-  background: linear-gradient(145deg, #9c77ff, #5931be);
-}
-
-.feature h3 {
-  font-size: 12px;
-  margin: 0 0 6px;
-}
-
-.feature p {
-  font-size: 10px;
-  line-height: 1.9;
-  color: var(--muted);
-  margin: 0;
-}
-
-/* لینک‌های سریع */
-
-.quicklinks {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  background: #ffffffc9;
-  border: 1px solid #e8edfa;
-  border-radius: 20px;
-  padding: 8px;
-  margin: 20px auto 35px;
-}
-
-.quick {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 13px 10px;
-  cursor: pointer;
-  border-left: 1px solid #e9edfa;
-}
-
-.quick:last-child {
-  border-left: 0;
-}
-
-.quick:hover {
-  background: #f0f4ff;
-  border-radius: 12px;
-}
-
-.quick .icon {
-  width: 43px;
-  height: 43px;
-  flex-basis: 43px;
-  font-size: 21px;
-}
-
-.quick strong {
-  display: block;
-  font-size: 11px;
-}
-
-.quick small {
-  display: block;
-  color: var(--muted);
-  font-size: 9px;
-  margin: 5px 0;
-}
-
-.quick a {
-  color: #174eb7;
-  font-size: 10px;
-}
-
-/* بخش‌های سایت */
+*{box-sizing:border-box}
 
-.section {
-  padding: 30px 0;
-  scroll-margin-top: 115px;
+body{
+ margin:0;
+ font-family:Vazirmatn,Tahoma,sans-serif;
+ color:var(--navy);
+ background:
+ radial-gradient(circle at 5% 5%,#d8edff,transparent 30%),
+ radial-gradient(circle at 95% 85%,#e3f3ff,transparent 30%),
+ #f7fbff;
+ min-height:100vh;
 }
 
-.heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.heading h2 {
-  font-size: 23px;
-  margin: 0;
-  color: #0a236e;
-}
-
-.heading p {
-  font-size: 12px;
-  color: var(--muted);
-  margin: 7px 0 0;
-}
-
-.panel {
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: 22px;
-  box-shadow: 0 10px 30px #10245c08;
-}
-
-.panel p {
-  font-size: 13px;
-  line-height: 2.3;
-}
-
-.tiles {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
-
-.tile {
-  padding: 18px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  box-shadow: 0 8px 22px #10245c08;
-}
-
-.tile-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 15px;
-  display: grid;
-  place-items: center;
-  background: #edf2ff;
-  font-size: 24px;
-  margin-bottom: 12px;
-}
-
-.tile h3 {
-  font-size: 13px;
-  margin: 0 0 8px;
-}
-
-.tile p {
-  font-size: 11px;
-  line-height: 2;
-  color: var(--muted);
-  margin: 0;
-}
-
-/* کارت کلاس‌ها */
-
-.class-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 14px;
-}
-
-.class-card {
-  text-align: right;
-  background: white;
-  color: var(--text);
-  border: 1px solid var(--border);
-  border-radius: 18px;
-  padding: 19px;
-  transition: .2s;
-}
-
-.class-card:hover {
-  transform: translateY(-3px);
-  border-color: #89aaf1;
-  box-shadow: 0 12px 24px #123c9418;
-}
-
-.class-card .emoji {
-  font-size: 29px;
-}
-
-.class-card h3 {
-  font-size: 14px;
-  margin: 10px 0 5px;
-}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
 
-.class-card p {
-  font-size: 10px;
-  line-height: 1.9;
-  color: var(--muted);
-  margin: 0;
+header{
+ text-align:center;
+ padding:22px 14px 14px;
 }
 
-.subnav {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin: 18px 0;
+.school-name{
+ font-size:clamp(25px,6vw,42px);
+ font-weight:900;
+ color:var(--blue);
 }
 
-.subnav button,
-.small-button {
-  background: #f4f6ff;
-  border: 1px solid #dce4fa;
-  color: #18367e;
-  border-radius: 11px;
-  padding: 10px 13px;
-  font-size: 12px;
+.subtitle{
+ color:#577b99;
+ margin-top:7px;
+ line-height:1.9;
 }
 
-.subnav button.active {
-  color: white;
-  background: #102a85;
+main{
+ width:min(100% - 24px,1000px);
+ margin:0 auto 35px;
 }
 
-.data-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.data-item {
-  border: 1px solid #e8edfa;
-  background: #fafbff;
-  border-radius: 12px;
-  padding: 13px;
-  font-size: 12px;
-  line-height: 1.9;
-}
-
-/* جدول برنامه */
-
-.table-wrap {
-  overflow-x: auto;
-  border-radius: 13px;
-  border: 1px solid var(--border);
-}
-
-table {
-  width: 100%;
-  min-width: 480px;
-  border-collapse: collapse;
-  background: white;
-}
-
-th, td {
-  padding: 12px 10px;
-  border-bottom: 1px solid #e8edfa;
-  text-align: right;
-  font-size: 11px;
-  line-height: 1.8;
-}
-
-th {
-  color: white;
-  background: #102775;
-}
-
-tr:nth-child(even) td {
-  background: #f7f9ff;
-}
-
-.notice {
-  padding: 12px;
-  margin-top: 14px;
-  background: #f3f6ff;
-  border-radius: 12px;
-  color: var(--muted);
-  font-size: 11px;
-  line-height: 2;
-}
-
-/* دبیران */
-
-.staff-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-.staff {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 14px;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 15px;
-}
-
-.avatar {
-  width: 43px;
-  height: 43px;
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  background: #eaf0ff;
-  border-radius: 13px;
-  font-size: 21px;
-}
+.page{display:none;animation:appear .3s ease}
+.page.active{display:block}
 
-.staff small {
-  display: block;
-  font-size: 10px;
-  color: var(--muted);
-  margin-bottom: 4px;
+@keyframes appear{
+ from{opacity:0;transform:translateY(8px)}
+ to{opacity:1;transform:translateY(0)}
 }
 
-.staff strong {
-  display: block;
-  font-size: 12px;
-  line-height: 1.8;
+.panel{
+ border:1px solid var(--border);
+ border-radius:25px;
+ padding:20px;
+ background:#ffffffed;
+ box-shadow:var(--shadow);
+ margin:14px 0;
 }
-
-/* فرم تماس */
 
-form label {
-  display: block;
-  font-size: 12px;
-  margin-top: 8px;
+.hero{
+ text-align:center;
+ padding:30px 18px;
+ border-radius:28px;
+ border:2px solid #b7d9f5;
+ background:linear-gradient(145deg,#e3f2ff,#fff 55%,#d8ebff);
+ box-shadow:var(--shadow);
+ overflow:hidden;
 }
 
-input, textarea {
-  display: block;
-  width: 100%;
-  margin: 8px 0 14px;
-  padding: 12px;
-  background: #fbfcff;
-  border: 1px solid #dce4f8;
-  border-radius: 11px;
-  outline: none;
+.school-logo{
+ display:block;
+ width:min(190px,65%);
+ max-height:190px;
+ height:auto;
+ object-fit:contain;
+ margin:0 auto 15px;
+ filter:drop-shadow(0 5px 9px #1769aa20);
 }
 
-input:focus, textarea:focus {
-  border-color: #4c80ee;
+.hero h2{
+ color:var(--blue);
+ font-size:clamp(21px,5vw,29px);
 }
 
-/* پنجره ورود */
-
-.modal-backdrop {
-  position: fixed;
-  inset: 0;
-  z-index: 200;
-  background: #06113fc9;
-  display: grid;
-  place-items: center;
-  padding: 16px;
+.hero p{
+ line-height:2.1;
+ color:#426681;
 }
 
-.modal {
-  position: relative;
-  width: min(430px, 100%);
-  padding: 26px;
-  background: white;
-  border-radius: 22px;
+.primary-btn,.back-btn{
+ border:0;
+ border-radius:14px;
+ padding:12px 20px;
+ color:white;
+ background:linear-gradient(135deg,#1769aa,#3998e5);
+ box-shadow:0 4px 12px #1769aa25;
 }
 
-.modal h2 {
-  color: #0b2476;
-  margin-top: 0;
-}
+.primary-btn:active,.back-btn:active{transform:scale(.98)}
 
-.modal p {
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 2;
+.back-btn{
+ background:#547a9a;
+ margin:4px 0 12px;
 }
 
-.close {
-  position: absolute;
-  left: 12px;
-  top: 12px;
-  width: 34px;
-  height: 34px;
-  border: 0;
-  border-radius: 10px;
-  background: #edf1ff;
-  color: #18367e;
-  font-size: 20px;
+.section-title{
+ text-align:center;
+ font-size:clamp(19px,4vw,25px);
+ margin:12px 0 20px;
+ color:var(--blue);
 }
 
-/* پایین سایت */
-
-footer {
-  margin-top: 30px;
-  padding: 36px 0 20px;
-  background: linear-gradient(110deg, #06134d, #091d70, #0b35a0);
-  color: white;
-  border-radius: 40px 40px 0 0;
-  position: relative;
-  overflow: hidden;
+.dashboard,.class-grid,.staff-grid{
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ gap:13px;
 }
 
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+.tile{
+ min-height:140px;
+ border-radius:22px;
+ border:1px solid var(--border);
+ background:linear-gradient(145deg,#fff,#eaf5ff);
+ box-shadow:0 5px 17px #174e7710;
+ padding:18px 9px;
+ text-align:center;
+ color:var(--navy);
+ transition:transform .2s,box-shadow .2s;
 }
 
-footer h3 {
-  font-size: 15px;
-}
+.tile:active{transform:scale(.97)}
+.tile:hover{box-shadow:0 8px 20px #1769aa20}
 
-footer p, footer a {
-  font-size: 11px;
-  line-height: 2.2;
-  color: #d7e2ff;
+.tile .emoji{
+ display:block;
+ font-size:35px;
+ margin-bottom:9px;
 }
 
-.footer-links {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
+.tile strong{
+ display:block;
+ font-size:16px;
+ line-height:1.8;
 }
 
-.copyright {
-  border-top: 1px solid #ffffff22;
-  margin-top: 22px;
-  padding-top: 16px;
-  text-align: center;
-  font-size: 10px;
-  color: #cbd8ff;
+.tile small{
+ display:block;
+ margin-top:7px;
+ line-height:1.8;
+ color:#527590;
 }
-
-/* موبایل */
-
-@media(max-width:900px) {
-  header {
-    flex-wrap: wrap;
-  }
 
-  nav {
-    order: 3;
-    flex-basis: 100%;
-    overflow-x: auto;
-    justify-content: flex-start;
-  }
+.class-tile{min-height:125px}
+.math{background:linear-gradient(145deg,#e4f2ff,#c6e4ff);border-color:#9bcdf4}
+.science{background:linear-gradient(145deg,#edf7ff,#d5eaff);border-color:#a7d3f4}
+.humanities{background:linear-gradient(145deg,#f1f7ff,#dce9fa);border-color:#c0d2ed}
 
-  .hero {
-    grid-template-columns: 1fr;
-  }
-
-  .hero-copy {
-    text-align: center;
-  }
-
-  .actions {
-    justify-content: center;
-  }
-
-  .features, .quicklinks {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .tiles, .class-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .staff-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .footer-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.class-room{
+ background:white;
+ border-radius:24px;
+ border:1px solid var(--border);
+ padding:17px;
+ box-shadow:var(--shadow);
 }
-
-@media(max-width:560px) {
-  header {
-    width: 96%;
-    top: 4px;
-    padding: 10px;
-    border-radius: 19px;
-    gap: 8px;
-  }
-
-  .brand .logo {
-    width: 42px;
-    height: 42px;
-    font-size: 21px;
-  }
-
-  .brand strong {
-    font-size: 12px;
-  }
-
-  .brand small {
-    font-size: 9px;
-  }
-
-  .login-button {
-    font-size: 10px;
-    padding: 8px;
-  }
-
-  nav button {
-    font-size: 10px;
-    padding: 9px;
-  }
-
-  .hero {
-    padding-top: 25px;
-    gap: 8px;
-  }
-
-  .hero-copy h1 {
-    font-size: 28px;
-  }
-
-  .hero-copy p {
-    font-size: 12px;
-  }
-
-  .hero-art {
-    min-height: 235px;
-  }
-
-  .rings {
-    width: 230px;
-    height: 230px;
-    border-width: 16px;
-  }
-
-  .rings:after {
-    inset: -28px;
-    border-width: 9px;
-  }
-
-  .building {
-    height: 175px;
-  }
-
-  .windows span {
-    height: 47px;
-  }
-
-  .door {
-    height: 65px;
-  }
-
-  .door:after {
-    font-size: 13px;
-  }
-
-  .features {
-    gap: 8px;
-  }
-
-  .feature {
-    padding: 10px 8px;
-    gap: 7px;
-    min-height: 85px;
-  }
-
-  .icon {
-    width: 38px;
-    height: 38px;
-    flex-basis: 38px;
-    font-size: 18px;
-    border-radius: 12px;
-  }
-
-  .feature h3 {
-    font-size: 10px;
-  }
-
-  .feature p {
-    font-size: 9px;
-  }
-
-  .quicklinks {
-    padding: 5px;
-  }
-
-  .quick {
-    padding: 9px 5px;
-    gap: 6px;
-  }
-
-  .quick .icon {
-    width: 31px;
-    height: 31px;
-    flex-basis: 31px;
-    font-size: 16px;
-  }
 
-  .quick strong {
-    font-size: 9px;
-  }
+.room-menu{margin-bottom:18px}
+.room-menu .tile{min-height:112px;padding:13px 6px}
 
-  .quick small, .quick a {
-    font-size: 8px;
-  }
-
-  .heading h2 {
-    font-size: 19px;
-  }
-
-  .tiles, .class-grid {
-    gap: 9px;
-  }
-
-  .tile, .class-card {
-    padding: 13px 10px;
-  }
-
-  .tile h3, .class-card h3 {
-    font-size: 12px;
-  }
-
-  .data-list, .staff-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .panel {
-    padding: 13px;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  footer {
-    border-radius: 27px 27px 0 0;
-  }
+.item-card{
+ background:#f7fbff;
+ border:1px solid #d7eafa;
+ border-radius:15px;
+ padding:13px;
+ margin:10px 0;
+ line-height:1.9;
+ overflow-wrap:anywhere;
 }
-</style>
-</head>
-
-<body>
-
-<!-- صفحه ورود -->
-
-<div id="entry">
-  <div class="entry-card">
-    <div class="logo">ی</div>
-    <div class="badge" style="margin-top:18px">آموزش • دوستی • آینده</div>
-    <h1>دبیرستان یادگاری</h1>
-    <p>
-      به دبیرستان یادگاری خوش آمدید؛
-      فضایی برای یادگیری، پیشرفت و ساختن آینده‌ای روشن.
-    </p>
-    <button class="btn primary" style="width:100%" onclick="enterSite()">
-      ورود به سایت ←
-    </button>
-  </div>
-</div>
-
-<!-- محتوای سایت -->
-
-<div id="site" class="hidden">
-
-<header>
-  <a class="brand" href="#home">
-    <div class="logo">ی</div>
-    <div>
-      <strong>مدرسه یادگاری</strong>
-      <small>پرورش امروز، آینده فردا</small>
-    </div>
-  </a>
-
-  <nav>
-    <button class="active" onclick="go('home',this)">صفحه اصلی</button>
-    <button onclick="go('about',this)">درباره ما</button>
-    <button onclick="go('news',this)">اخبار و رویدادها</button>
-    <button onclick="go('staff',this)">معلمان</button>
-    <button onclick="go('gallery',this)">گالری</button>
-    <button onclick="go('classes',this)">کلاس‌ها</button>
-    <button onclick="go('contact',this)">تماس با ما</button>
-  </nav>
-
-  <button class="login-button" onclick="openLogin()">♙ ورود / ثبت‌نام</button>
-</header>
-
-<main class="container">
-
-<!-- صفحه اصلی -->
-
-<section class="hero" id="home">
-
-  <div class="hero-art">
-    <div class="rings"></div>
-    <div class="building">
-      <div class="roof"></div>
-      <div class="windows">
-        <span></span><span></span><span></span>
-        <span></span><span></span><span></span>
-      </div>
-      <div class="door"></div>
-      <div class="ground"></div>
-    </div>
-  </div>
-
-  <div class="hero-copy">
-    <span class="badge">به خانواده یادگاری خوش آمدید ✨</span>
-    <h1>
-      به دبیرستان
-      <span class="gradient">یادگاری</span>
-      خوش آمدید
-    </h1>
-    <p>
-      ما در دبیرستان یادگاری، با همراهی دبیران و دانش‌آموزان،
-      مسیر یادگیری و شکوفایی استعدادها را هموار می‌کنیم.
-    </p>
-    <div class="actions">
-      <button class="btn primary" onclick="go('about')">درباره مدرسه بیشتر بدانید</button>
-      <button class="btn outline" onclick="go('contact')">☎ تماس با ما</button>
-    </div>
-  </div>
-
-</section>
-
-<section class="features">
-
-  <article class="feature">
-    <div class="icon">🛡️</div>
-    <div>
-      <h3>محیطی امن و پویا</h3>
-      <p>فضایی دوستانه برای یادگیری بهتر</p>
-    </div>
-  </article>
-
-  <article class="feature">
-    <div class="icon purple">🏆</div>
-    <div>
-      <h3>فعالیت‌های متنوع</h3>
-      <p>برنامه‌های فرهنگی و مهارتی</p>
-    </div>
-  </article>
-
-  <article class="feature">
-    <div class="icon">👩‍🏫</div>
-    <div>
-      <h3>کادر آموزشی</h3>
-      <p>همراهی دبیران در مسیر پیشرفت</p>
-    </div>
-  </article>
-
-  <article class="feature">
-    <div class="icon purple">📚</div>
-    <div>
-      <h3>آموزش با کیفیت</h3>
-      <p>توجه به یادگیری و استعدادها</p>
-    </div>
-  </article>
-
-</section>
-
-<section class="quicklinks">
-
-  <div class="quick" onclick="go('classes')">
-    <div class="icon">👩🏻‍🎓</div>
-    <div>
-      <strong>کلاس‌ها</strong>
-      <small>دانش‌آموزان و درس‌ها</small>
-      <a>مشاهده بیشتر ←</a>
-    </div>
-  </div>
-
-  <div class="quick" onclick="go('schedule')">
-    <div class="icon purple">🗓️</div>
-    <div>
-      <strong>تقویم کلاسی</strong>
-      <small>برنامه درسی هفتگی</small>
-      <a>مشاهده بیشتر ←</a>
-    </div>
-  </div>
 
-  <div class="quick" onclick="go('
+.item-card button{
+ border:0;
+ background:#dceeff;
+ color:#
